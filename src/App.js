@@ -1,9 +1,12 @@
 import './index.css';
-import Navbar from './components/Navbar'
+import DesktopNav from './components/DesktopNav';
+import logo from './assets/logo.png';
+
 function App() {
   return (
     <div className="App ">
-      <Navbar />   </div>
+      <DesktopNav logo={{ src: logo, alt: "drenos-logo" }} />
+    </div>
   );
 }
 
