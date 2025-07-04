@@ -1,13 +1,11 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import routes from './routes/routes';
 import './index.css';
-import DesktopNav from './components/DesktopNav';
-import logo from './assets/logo.png';
+
+const router = createBrowserRouter(routes);
 
 function App() {
-  return (
-    <div className="App ">
-      <DesktopNav logo={{ src: logo, alt: "drenos-logo" }} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
