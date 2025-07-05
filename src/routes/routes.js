@@ -6,7 +6,6 @@ const routes = [
   {
     path: '/',
     element: <RootLayout />,
-    // meta è facoltativo, ma ti servirà per costruire la navbar
     meta: { label: "Home", showInNav: true },
     children: [
       {
@@ -14,7 +13,6 @@ const routes = [
         element: <Home />,
         meta: { label: "Home", showInNav: true }
       },
-      // altre route figlie...
     ]
   },
   {
@@ -24,11 +22,9 @@ const routes = [
     meta: { label: "About", showInNav: true },
     children: [
       {
-        index: true,          // rende questa la route di default per `/`
         element: <About />,
         meta: { label: "About", showInNav: true }
       },
-      // altre route figlie...
     ]
   }
 ];
