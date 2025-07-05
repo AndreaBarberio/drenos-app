@@ -18,7 +18,7 @@ const routes = [
   {
     path: '/About',
     element: <RootLayout />,
-    // meta è facoltativo, ma ti servirà per costruire la navbar
+    // meta è facoltativo, ma servirà per costruire la navbar
     meta: { label: "About", showInNav: true },
     children: [
       {
