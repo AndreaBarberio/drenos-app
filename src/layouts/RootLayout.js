@@ -4,14 +4,20 @@ import logo from "../assets/logo.png"
 import { Outlet } from 'react-router-dom';
 
 export default function RootLayout() {
-  const navLinks = routes[0].children.filter(route => route.meta?.showInNav);
+
+  const navLinks = routes.map(route => route.meta?.showInNav ? route : null);
+
 
   return (
-    <>
-      <DesktopNav className="text-yellow-500" logo={{ src: logo, alt: "Logo" }} links={navLinks} />
-      <main className="pt-16 px-4">
+    <div className="min-h-screen flex flex-col">
+      <DesktopNav logo={{ src: logo, alt: "Logo" }} links={navLinks} />
+      <main className="flex-1 p-4">
         <Outlet />
       </main>
-    </>
+      <footer className="h-16 bg-gray-200 text-center flex items-center justify-center">
+        Footer da creare
+      </footer>
+    </div>
   );
 }
+
