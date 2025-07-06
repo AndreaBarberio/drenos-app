@@ -1,7 +1,15 @@
 html, body, #root {
   height: 100%;
 }
-
+body {
+  background-image: url('./assets/drenos/drenosbg-0.jpg');
+  background-size: cover;       /* Copre tutto lo schermo */
+  background-position: center;  /* Centra l'immagine */
+  background-repeat: no-repeat; /* Non ripetere l'immagine */
+  height: 100vh;                /* Per assicurarti che il body riempia la finestra */
+  margin: 0;                    /* Evita bordi bianchi */
+  padding: 0;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

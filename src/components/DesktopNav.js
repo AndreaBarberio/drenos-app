@@ -8,9 +8,9 @@ function DesktopNav({ logo: { src, alt }, links, onCartClick, userMenu, isLogged
   links.map((link) => console.log("link", link))
 
   return (
-    <nav className="flex flex-initial h-12 w-full bg-slate-400 text-gray-500" aria-label="Main navigation">
+    <nav className="flex h-12 w-full bg-transparent text-gray-300" aria-label="Main navigation">
       <img className={imgStyle} src={src} alt={alt} />
-      <ul className="ml-2 flex flex-row flex-initial self-center gap-2" >
+      <ul className="flex flex-1 justify-evenly ml-2  flex-row  self-center" >
         {links.map((link, i) => (
           <li key={i}>
             <Link to={link.path}>
@@ -19,6 +19,8 @@ function DesktopNav({ logo: { src, alt }, links, onCartClick, userMenu, isLogged
           </li>
         ))}
       </ul>
+      <img className={imgStyle + " hidden"} src={src} alt={alt} />
+
     </nav >
   );
 }
