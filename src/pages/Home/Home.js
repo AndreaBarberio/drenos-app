@@ -1,9 +1,9 @@
-import '../index.css';
+import '../../index.css';
 
 function Home() {
   return (
     <div className="Home ">
-      This is the home!
+      This is the homepage!
     </div>
   );
 }
