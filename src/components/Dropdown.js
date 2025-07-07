@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Dropdown({ labels, urls, hover }) {
+function Dropdown({ labels, urls }) {
 
   return (
     <div className="absolute">

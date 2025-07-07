@@ -1,12 +1,13 @@
 import RootLayout from '../layouts/RootLayout';
 import Home from '../pages/Home/Home';
 import About from '../pages/About/About';
-import Prodotti from '../pages/Products/Products';
-import Carrello from '../pages/Cart/Cart';
+import Products from '../pages/Products/Products';
 import Smartphone from '../pages/Products/Smartphone/Smartphone';
 import Profile from '../pages/Profile/Profile';
 import NotFound from '../pages/NotFound/NotFound';
 import Notebook from '../pages/Products/Notebook/Notebook';
+import Cart from '../pages/Cart/Cart';
+import Accessories from '../pages/Products/Accessories/Accessories';
 
 const routes = [
   {
@@ -34,16 +35,16 @@ const routes = [
     ]
   },
   {
-    path: '/prodotti',
+    path: '/products',
     element: <RootLayout />,
 
-    meta: { label: "Prodotti", showInNav: true },
+    meta: { label: "Products", showInNav: true },
     children: [
 
       {
         index: true,
-        element: <Prodotti />,
-        meta: { label: "Prodotti", showInNav: true }
+        element: <Products />,
+        meta: { label: "Products", showInNav: true }
       },
       {
         path: 'smartphone',
@@ -57,7 +58,7 @@ const routes = [
       },
       {
         path: 'accessories',
-        element: <Prodotti />,
+        element: <Accessories />,
         meta: { label: "Accessories", showInDropdown: true }
       }
     ]
@@ -75,14 +76,14 @@ const routes = [
     ]
   },
   {
-    path: '/Carrello',
+    path: '/Cart',
     element: <RootLayout />,
-    meta: { label: "Carrello", showInNav: true },
+    meta: { label: "Cart", showInNav: true },
     children: [
       {
         index: true,
-        element: <Carrello />,
-        meta: { label: "Carrello", showInNav: true }
+        element: <Cart />,
+        meta: { label: "Cart", showInNav: true }
       },
     ]
   },
