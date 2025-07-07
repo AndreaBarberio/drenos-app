@@ -13,12 +13,9 @@ function DesktopNav({ logo: { src, alt }, links }) {
     ?.filter(child => child.meta?.showInDropdown)
     .map(child => child.meta.label);
 
-
   const dropUrls = prodottiRoute?.children
     ?.filter(child => child.meta?.showInDropdown)
-    .map(child => child.path);
-
-
+    .map(child => `/prodotti/${child.path}`);
 
   return (
     <nav className="flex h-12 w-full bg-transparent text-gray-100" aria-label="Main navigation">

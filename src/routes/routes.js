@@ -57,9 +57,9 @@ const routes = [
         meta: { label: "Notebook", showInDropdown: true }
       },
       {
-        path: 'accessori', // per ora label fittizie da mostrare nella dropdown
+        path: 'accessories', // per ora label fittizie da mostrare nella dropdown
         element: <Prodotti />, // per adesso non avendo ancora le subcategories mandiamo ancora a Prodotti, resta da implementare :D 
-        meta: { label: "Accessori", showInDropdown: true }
+        meta: { label: "Accessories", showInDropdown: true }
       }
     ]
   },
