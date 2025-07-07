@@ -8,7 +8,7 @@ const imgStyle = "self-center align-center h-8 w-8 rounded-md shadow-black shado
 function DesktopNav({ logo: { src, alt }, links }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const prodottiRoute = routes.find(route => route.path === '/Prodotti');
+  const prodottiRoute = routes.find(route => route.path === '/prodotti');
   const dropLabels = prodottiRoute?.children
     ?.filter(child => child.meta?.showInDropdown)
     .map(child => child.meta.label);
@@ -25,7 +25,7 @@ function DesktopNav({ logo: { src, alt }, links }) {
       <img className={imgStyle} src={src} alt={alt} />
       <ul className="flex flex-1 justify-evenly ml-2 flex-row self-center">
         {links.map((link, i) => {
-          const isProdotti = link.path === '/Prodotti';
+          const isProdotti = link.path === '/prodotti';
 
           return (
             <li

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import logo from "../assets/drenos/logo.png"
 export default function RootLayout() {
 
-  const navLinks = routes.map(route => route.meta?.showInNav ? route : null);
+  const navLinks = routes.filter(route => route.meta?.showInNav);
 
   return (
     <div className="min-h-screen w-full flex flex-col">

@@ -2,8 +2,11 @@ import RootLayout from '../layouts/RootLayout';
 import Home from '../pages/Home/Home';
 import About from '../pages/About/About';
 import Prodotti from '../pages/Products/Products';
-import Profilo from '../pages/Profile/Profile';
 import Carrello from '../pages/Cart/Cart';
+import Smartphone from '../pages/Products/Smartphone/Smartphone';
+import Profile from '../pages/Profile/Profile';
+import NotFound from '../pages/NotFound/NotFound';
+import Notebook from '../pages/Products/Notebook/Notebook';
 
 const routes = [
   {
@@ -19,7 +22,7 @@ const routes = [
     ]
   },
   {
-    path: '/About',
+    path: '/about',
     element: <RootLayout />,
     // meta è facoltativo, ma servirà per costruire la navbar
     meta: { label: "About", showInNav: true },
@@ -32,11 +35,12 @@ const routes = [
     ]
   },
   {
-    path: '/Prodotti',
+    path: '/prodotti',
     element: <RootLayout />,
     // meta è facoltativo, ma servirà per costruire la navbar
     meta: { label: "Prodotti", showInNav: true },
     children: [
+
       {
         index: true,
         element: <Prodotti />,
@@ -44,12 +48,12 @@ const routes = [
       },
       {
         path: 'smartphone',
-        element: <Prodotti />,
+        element: <Smartphone />,
         meta: { label: "Smartphone", showInDropdown: true }
       },
       {
         path: 'notebook',
-        element: <Prodotti />,
+        element: <Notebook />,
         meta: { label: "Notebook", showInDropdown: true }
       },
       {
@@ -60,15 +64,15 @@ const routes = [
     ]
   },
   {
-    path: '/Profilo',
+    path: '/profile',
     element: <RootLayout />,
     // meta è facoltativo, ma servirà per costruire la navbar
-    meta: { label: "Profilo", showInNav: true },
+    meta: { label: "Profile", showInNav: true },
     children: [
       {
         index: true,
-        element: <Profilo />,
-        meta: { label: "Profilo", showInNav: true }
+        element: <Profile />,
+        meta: { label: "Profile", showInNav: true }
       },
     ]
   },
@@ -85,5 +89,9 @@ const routes = [
       },
     ]
   },
+  {
+    path: '*',
+    element: <NotFound />
+  }
 ];
 export default routes;

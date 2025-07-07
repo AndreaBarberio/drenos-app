@@ -2,7 +2,7 @@ import '../../index.css';
 
 function Profile() {
   return (
-    <div className="Profilo ">
+    <div className="Profile">
       This is the Profile Page!
     </div>
   );

@@ -13,6 +13,6 @@ function Dropdown({ labels, urls, hover }) {
       </ul>
     </div>
   )
-}
+}  
 
 export default Dropdown;
