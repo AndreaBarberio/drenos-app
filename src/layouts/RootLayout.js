@@ -6,7 +6,6 @@ export default function RootLayout() {
 
   const navLinks = routes.map(route => route.meta?.showInNav ? route : null);
 
-
   return (
     <div className="min-h-screen w-full flex flex-col">
       <DesktopNav logo={{ src: logo, alt: "Logo" }} links={navLinks} />
@@ -14,7 +13,7 @@ export default function RootLayout() {
         <Outlet />
       </main>
       <footer className="h-16 bg-transparent text-center flex items-center justify-center">
-        Footer 
+        Footer
       </footer>
     </div>
   );

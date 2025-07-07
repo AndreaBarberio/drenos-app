@@ -1,9 +1,15 @@
-function Dropdown({ label, items, hover }) {
+import { Link } from "react-router-dom";
+
+function Dropdown({ labels, urls, hover }) {
 
   return (
     <div className="absolute">
-      <ul>
-        <li>{ }</li>
+      <ul className="dropdown-container ">
+        {urls.map((url, i) => (
+          <Link to={url} key={url}>
+            <li className="shadow-md shadow-white p-2 rounded-xl">{labels[i]}</li>
+          </Link>
+        ))}
       </ul>
     </div>
   )
