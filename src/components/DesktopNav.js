@@ -9,6 +9,7 @@ function DesktopNav({ logo: { src, alt }, links }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const prodottiRoute = routes.find(route => route.path === '/prodotti');
+  //
   const dropLabels = prodottiRoute?.children
     ?.filter(child => child.meta?.showInDropdown)
     .map(child => child.meta.label);
