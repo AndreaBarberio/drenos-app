@@ -12,19 +12,18 @@ const routes = [
   {
     path: '/',
     element: <RootLayout />,
-    meta: { label: "Home", showInNav: true },
+    meta: { label: "Home", showInNav: false },
     children: [
       {
         index: true,          // rende questa la route di default per `/`
         element: <Home />,
-        meta: { label: "Home", showInNav: true }
       },
     ]
   },
   {
     path: '/about',
     element: <RootLayout />,
-    // meta è facoltativo, ma servirà per costruire la navbar
+    // meta è facoltativo, ma servirà per costruire routes e soprattutto nested routes
     meta: { label: "About", showInNav: true },
     children: [
       {
@@ -37,7 +36,7 @@ const routes = [
   {
     path: '/prodotti',
     element: <RootLayout />,
-    // meta è facoltativo, ma servirà per costruire la navbar
+
     meta: { label: "Prodotti", showInNav: true },
     children: [
 
@@ -57,8 +56,8 @@ const routes = [
         meta: { label: "Notebook", showInDropdown: true }
       },
       {
-        path: 'accessories', // per ora label fittizie da mostrare nella dropdown
-        element: <Prodotti />, // per adesso non avendo ancora le subcategories mandiamo ancora a Prodotti, resta da implementare :D 
+        path: 'accessories',
+        element: <Prodotti />,
         meta: { label: "Accessories", showInDropdown: true }
       }
     ]
@@ -66,7 +65,6 @@ const routes = [
   {
     path: '/profile',
     element: <RootLayout />,
-    // meta è facoltativo, ma servirà per costruire la navbar
     meta: { label: "Profile", showInNav: true },
     children: [
       {
@@ -79,7 +77,6 @@ const routes = [
   {
     path: '/Carrello',
     element: <RootLayout />,
-    // meta è facoltativo, ma servirà per costruire la navbar
     meta: { label: "Carrello", showInNav: true },
     children: [
       {
@@ -89,7 +86,7 @@ const routes = [
       },
     ]
   },
-  {
+  { // se il path non è gestito nelle rotte ---> 404! 
     path: '*',
     element: <NotFound />
   }
