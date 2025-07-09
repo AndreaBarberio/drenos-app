@@ -20,7 +20,7 @@ export default function RootLayout() {
   return (
     <div className="min-h-screen w-full flex flex-col">
       <DesktopNav productRoute={productRoute} dropLabels={dropLabels} dropUrls={dropUrls} navLinks={navLinks} logo={{ src: logo, alt: "Logo" }} links={navLinks} />
-      <main className="flex-1 p-4 m-12 shadow-md shadow-black bg-slate-200 rounded-xl  ">
+      <main className="flex-1 p-4 m-12   ">
         <Outlet />
       </main>
       {/*  <footer className="h-16 bg-transparent text-center flex items-center justify-center">
