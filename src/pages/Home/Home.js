@@ -15,7 +15,7 @@ function Home() {
     <div className="m-0 p-24 w-full bg-transparent flex flex-col min-h-screen">
       <HeroSection />
       <ServicesOverview />
-      <FeaturedProduct {...featuredData} />
+      <FeaturedProduct  {...featuredData} />
       {/*   
       <FeaturedProduct />
       <Testimonials />
