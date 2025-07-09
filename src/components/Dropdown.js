@@ -6,13 +6,13 @@ function Dropdown({ labels, urls }) {
     <div className="absolute">
       <ul className="dropdown-container ">
         {urls.map((url, i) => (
-          <Link to={url} key={url}>
+          <Link to={url} key={i}>
             <li className="shadow-md shadow-white p-2 rounded-xl">{labels[i]}</li>
           </Link>
         ))}
       </ul>
     </div>
   )
-}  
+}
 
 export default Dropdown;

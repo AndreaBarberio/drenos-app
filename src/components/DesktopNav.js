@@ -18,7 +18,7 @@ function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropU
 
           const isProducts = link.path === '/products';
           //estraiamo un booleano per renderizzare sotto prodotti la dropdown evitando che si propaghi sotto tutti i link della nav
-          return (<>
+          return (
 
             <li
               key={i}
@@ -36,7 +36,7 @@ function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropU
                 </div>
               )}
             </li>
-          </>
+
           );
         })}
       </ul>
