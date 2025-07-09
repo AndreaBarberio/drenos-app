@@ -8,12 +8,12 @@ import HeroSection from "../../components/Home/HeroSection/HeroSection";
 import ServicesOverview from "../../components/Home/ServiceOverview/ServiceOverview";
 import FeaturedProduct from "../../components/Home/FeaturedProduct/FeaturedProduct";
 import featuredData from "../../data/featuredData"
-
+import heroData from "../../data/heroSectionData"
 
 function Home() {
   return (
     <div className="m-0 p-24 w-full bg-transparent flex flex-col min-h-screen">
-      <HeroSection />
+      <HeroSection {...heroData} />
       <ServicesOverview />
       <FeaturedProduct  {...featuredData} />
       {/*   
