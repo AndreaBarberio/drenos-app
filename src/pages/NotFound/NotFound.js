@@ -12,7 +12,7 @@ export default function NotFound() {
     >
       {isOpen && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className="relative bg-white text-black p-8 rounded-xl shadow-lg max-w-md w-full">
+          <div className="relative bg-transparent border-sky-900 text-black p-8 rounded-xl shadow-lg max-w-md w-full">
             {/* X di chiusura */}
             <button
               onClick={() => setIsOpen(false)}

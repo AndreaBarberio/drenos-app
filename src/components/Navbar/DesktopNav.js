@@ -10,7 +10,7 @@ function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropU
 
 
   return (
-    <nav className="flex h-12 w-full bg-transparent text-gray-100" aria-label="Main navigation">
+    <nav className="flex h-12 w-full bg-transparent text-gray-100 fixed top-0 left-0 border-b border-gray-600 z-50 backdrop-blur-md" aria-label="Main navigation">
 
       <Link className={imgStyle} to="/"> <img src={src} alt={alt} /> </ Link>
       <ul className="flex flex-1 justify-evenly ml-2 flex-row self-center">
