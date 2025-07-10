@@ -21,7 +21,7 @@ export default function RootLayout() {
   return (
     <div className="flex flex-col w-full ">
       <DesktopNav productRoute={productRoute} dropLabels={dropLabels} dropUrls={dropUrls} navLinks={navLinks} logo={{ src: logo, alt: "Logo" }} links={navLinks} />
-      <main className="flex-1 mt-12 mb-12 bg-slate-400 shadow-lg shadow-black m-24 rounded-xl ">
+      <main className="flex-1 mt-12 mb-12 ">
         <Outlet />
       </main>
       {/*  

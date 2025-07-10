@@ -2,9 +2,7 @@ html, body, #root {
   height: 100%;
 }
 body {
-  /* background-image: url('./assets/drenos/drenosbg-2.png'); */
-  
-  background-color: brown;
+  background-image: url('./assets/drenos/drenosbg-2.png'); 
   background-size: cover;      
   background-position: center;  
   background-repeat: no-repeat; 
