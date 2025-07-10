@@ -20,9 +20,9 @@ export default function RootLayout() {
   const navLinks = routes.filter(route => route.meta?.showInNav);
 
   return (
-    <div className="flex flex-col w-full ">
+    <div className="flex flex-col w-full min-h-screen">
       <DesktopNav productRoute={productRoute} dropLabels={dropLabels} dropUrls={dropUrls} navLinks={navLinks} logo={{ src: logo, alt: "Logo" }} links={navLinks} />
-      <main className="flex-1 mt-12 mb-12 ">
+      <main className="flex-1 mt-12 mb-12">
         <Outlet />
       </main>
       {/*  <footer className="h-16 bg-transparent text-center flex items-center justify-center">

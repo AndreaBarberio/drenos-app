@@ -9,16 +9,15 @@ import ServicesOverview from "../../components/Home/ServiceOverview/ServiceOverv
 import FeaturedProduct from "../../components/Home/FeaturedProduct/FeaturedProduct";
 import featuredData from "../../data/featuredData"
 import heroData from "../../data/heroSectionData"
-
+import Testimonials from "../../components/Home/Testimonials/Testimonials";
 function Home() {
   return (
     <div className="m-0 p-24 w-full bg-transparent flex flex-col min-h-screen">
       <HeroSection {...heroData} />
       <ServicesOverview />
       <FeaturedProduct  {...featuredData} />
-      {/*   
-      <FeaturedProduct />
-      <Testimonials />
+      <Testimonials /> {/*   
+     
       <ContactCTA /> */}
     </div>
   );
