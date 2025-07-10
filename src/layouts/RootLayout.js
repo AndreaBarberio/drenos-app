@@ -2,6 +2,8 @@ import routes from '../routes/routes';
 import DesktopNav from '../components/Navbar/DesktopNav';
 import { Outlet } from 'react-router-dom';
 import logo from "../assets/drenos/logo.png"
+import Footer from '../components/Footer/Footer';
+
 export default function RootLayout() {
 
   const productRoute = routes.find(route => route.path === '/products');
@@ -26,6 +28,7 @@ export default function RootLayout() {
       {/*  <footer className="h-16 bg-transparent text-center flex items-center justify-center">
         Footer
       </footer> */}
+      <Footer />
     </div>
   );
 }
