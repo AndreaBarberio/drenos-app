@@ -2,6 +2,7 @@ import routes from '../routes/routes';
 import DesktopNav from '../components/Navbar/DesktopNav';
 import { Outlet } from 'react-router-dom';
 import logo from "../assets/drenos/logo.png"
+import Footer from '../components/Footer/Footer';
 export default function RootLayout() {
 
   const productRoute = routes.find(route => route.path === '/products');
@@ -18,15 +19,15 @@ export default function RootLayout() {
   const navLinks = routes.filter(route => route.meta?.showInNav);
 
   return (
-    <div className="min-h-screen w-full flex">
+    <div className="flex flex-col w-full ">
       <DesktopNav productRoute={productRoute} dropLabels={dropLabels} dropUrls={dropUrls} navLinks={navLinks} logo={{ src: logo, alt: "Logo" }} links={navLinks} />
-      <main className="flex-1 mt-12">
+      <main className="flex-1 mt-12 mb-12 bg-slate-400 shadow-lg shadow-black m-24 rounded-xl ">
         <Outlet />
       </main>
-      {/*  <footer className="h-16 bg-transparent text-center flex items-center justify-center">
-        Footer
-      </footer> */}
-    </div>
+      {/*  
+        */}
+      <Footer className="h-16 bg-transparent text-center flex items-center justify-center backdrop-blur-md" />
+    </div >
   );
 }
 
