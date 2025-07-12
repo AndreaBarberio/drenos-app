@@ -1,0 +1,66 @@
+[
+  {
+    "path": "/",
+    "meta": { "label": "Home", "showInNav": false },
+    "children": [
+      {
+        "index": true
+      }
+    ]
+  },
+  {
+    "path": "/about",
+    "meta": { "label": "About", "showInNav": true },
+    "children": [
+      {
+        "index": true,
+        "meta": { "label": "About", "showInNav": true }
+      }
+    ]
+  },
+  {
+    "path": "/products",
+    "meta": { "label": "Products", "showInNav": true },
+    "children": [
+      {
+        "index": true,
+        "meta": { "label": "Products", "showInNav": true }
+      },
+      {
+        "path": "smartphone",
+        "meta": { "label": "Smartphone", "showInDropdown": true }
+      },
+      {
+        "path": "notebook",
+        "meta": { "label": "Notebook", "showInDropdown": true }
+      },
+      {
+        "path": "accessories",
+        "meta": { "label": "Accessories", "showInDropdown": true }
+      }
+    ]
+  },
+  {
+    "path": "/profile",
+    "meta": { "label": "Profile", "showInNav": true },
+    "children": [
+      {
+        "index": true,
+        "meta": { "label": "Profile", "showInNav": true }
+      }
+    ]
+  },
+  {
+    "path": "/cart",
+    "meta": { "label": "Cart", "showInNav": true },
+    "children": [
+      {
+        "index": true,
+        "meta": { "label": "Cart", "showInNav": true }
+      }
+    ]
+  },
+  {
+    "path": "*"
+  }
+]
