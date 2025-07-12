@@ -76,7 +76,7 @@ const routes = [
     ]
   },
   {
-    path: '/Cart',
+    path: '/cart',
     element: <RootLayout />,
     meta: { label: "Cart", showInNav: true },
     children: [

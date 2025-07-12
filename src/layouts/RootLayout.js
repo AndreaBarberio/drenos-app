@@ -3,6 +3,7 @@ import DesktopNav from '../components/Navbar/DesktopNav';
 import { Outlet } from 'react-router-dom';
 import logo from "../assets/drenos/logo.png"
 import Footer from '../components/Footer/Footer';
+import MobileNav from '../components/Navbar/MobileNav';
 
 export default function RootLayout() {
 
@@ -21,11 +22,26 @@ export default function RootLayout() {
 
   return (
     <div className="flex flex-col w-full min-h-screen">
-      <DesktopNav productRoute={productRoute} dropLabels={dropLabels} dropUrls={dropUrls} navLinks={navLinks} logo={{ src: logo, alt: "Logo" }} links={navLinks} />
+
+      <DesktopNav
+        productRoute={productRoute}
+        dropLabels={dropLabels}
+        dropUrls={dropUrls}
+        navLinks={navLinks}
+        logo={{ src: logo, alt: "Logo" }}
+        links={navLinks} />
+        
+      <MobileNav
+        productRoute={productRoute}
+        dropLabels={dropLabels}
+        dropUrls={dropUrls}
+        links={navLinks}
+        logo={{ src: logo, alt: "Logo" }}
+      />
       <main className="flex-1 mt-12 mb-12">
         <Outlet />
       </main>
- 
+
       <Footer />
     </div>
   );

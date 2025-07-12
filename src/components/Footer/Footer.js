@@ -21,8 +21,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
-        {new Date().getFullYear()} Drenos. Tutti i diritti riservati ad Andrea Barberio.
+      <div className="flex justify-around flex-col md:flex-row mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs mb-12 md:mb-0">
+        <span>Drenos®</span>
+        <span>Tutti i diritti riservati ad Andrea Barberio.</span>
+        <span>{new Date().toLocaleString()}</span>
       </div>
     </footer>
   );
