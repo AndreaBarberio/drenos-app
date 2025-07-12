@@ -12,7 +12,7 @@ import heroData from "../../data/heroSectionData"
 import Testimonials from "../../components/Home/Testimonials/Testimonials";
 function Home() {
   return (
-    <div className="flex flex-col m-0 p-24 w-full bg-transparent min-h-screen">
+    <div className="flex flex-col justify-evenly gap-8 m-0 p-16 w-full bg-transparent min-h-screen">
       <HeroSection {...heroData} />
       <ServicesOverview />
       <FeaturedProduct  {...featuredData} />

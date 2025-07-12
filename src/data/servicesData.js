@@ -2,14 +2,14 @@ const servicesData = [
   {
     id: 1,
     icon: "💆‍♂️",
-    title: "Massaggi Sportivi",
-    description: "Rilassa muscoli tesi e migliora le performance fisiche.",
+    title: "Social Media Marketing",
+    description: "Rilassati, possiamo offrirti anche un servizio per Instagram, Linkedin e/o Facebook.",
   },
   {
     id: 2,
     icon: "🛍️",
-    title: "Vendita Accessori",
-    description: "Una selezione curata di prodotti per ogni esigenza.",
+    title: "Vendita del Prodotto",
+    description: "Una selezione curata per i tuoi prodotti, pronta ad ogni esigenza.",
   },
   {
     id: 3,
