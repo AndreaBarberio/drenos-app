@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Tag from "../../Tag/Tag";
 function FeaturedProduct({ title, description, image, ctaText, ctaLink, tags = [] }) {
   return (
-    <div className="flex flex-col  md:flex-row rounded-2xl overflow-hidden" S>
+    <div className="flex flex-col w-full self-center md:flex-row rounded-2xl overflow-hidden">
       <img src={image} alt={title} className="w-full md:w-1/2 h-64 object-cover rounded-xl" />
 
       <div className="p-6 flex flex-col justify-between">

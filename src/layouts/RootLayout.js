@@ -25,9 +25,7 @@ export default function RootLayout() {
       <main className="flex-1 mt-12 mb-12">
         <Outlet />
       </main>
-      {/*  <footer className="h-16 bg-transparent text-center flex items-center justify-center">
-        Footer
-      </footer> */}
+ 
       <Footer />
     </div>
   );

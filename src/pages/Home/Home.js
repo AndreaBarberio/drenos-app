@@ -12,13 +12,11 @@ import heroData from "../../data/heroSectionData"
 import Testimonials from "../../components/Home/Testimonials/Testimonials";
 function Home() {
   return (
-    <div className="m-0 p-24 w-full bg-transparent flex flex-col min-h-screen">
+    <div className="flex flex-col m-0 p-24 w-full bg-transparent min-h-screen">
       <HeroSection {...heroData} />
       <ServicesOverview />
       <FeaturedProduct  {...featuredData} />
-      <Testimonials /> {/*   
-     
-      <ContactCTA /> */}
+      <Testimonials /> { }
     </div>
   );
 }
