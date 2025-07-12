@@ -37,11 +37,7 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
   };
 
   return (
-    /* <nav className="md:hidden fixed bottom-0 left-0 w-full bg-[rgb(129,155,167)] bg-opacity-90 text-white border-t 
-    border-gray-500 shadow-md backdrop-blur-sm z-50"> */
-    /* <nav className="md:hidden fixed bottom-0 left-0 w-full bg-white/90 text-gray-800 border-t border-gray-300 
-    shadow-lg backdrop-blur-md z-50">
-     */
+
     <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black bg-opacity-60 backdrop-blur-sm border-t border-gray-700 text-white z-50 shadow-lg">
 
       {dropdownOpen && (

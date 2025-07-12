@@ -1,36 +1,57 @@
-import routes from '../routes/routes';
 import DesktopNav from '../components/Navbar/DesktopNav';
 import { Outlet } from 'react-router-dom';
-import logo from "../assets/drenos/logo.png"
+import logo from "../assets/drenos/logo.png";
 import Footer from '../components/Footer/Footer';
 import MobileNav from '../components/Navbar/MobileNav';
+import ChargeSpinner from '../components/Charging/ChargeSpinner';
+
+import { useEffect, useState } from 'react';
 
 export default function RootLayout() {
+  const [routesData, setRoutesData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const productRoute = routes.find(route => route.path === '/products');
-  // estraggo le labels evitando ripetizioni
+  useEffect(() => {
+    const fetchRoutes = async () => {
+      try {
+        const res = await fetch("/config/routes.json"); // 
+        const data = await res.json();
+        setRoutesData(data);
+      } catch (error) {
+        console.error("Errore nel fetch delle routes:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRoutes();
+  }, []);
+
+  if (loading || !routesData) return <ChargeSpinner />
+
+  const productRoute = routesData.find(route => route.path === '/products');
 
   const dropLabels = productRoute?.children
     ?.filter(child => child.meta?.showInDropdown)
     .map(child => child.meta.label);
 
-  //facciamo la stessa cosa delle label, per il path, gestendo anche il caso in cui non siamo ancora in products-page
   const dropUrls = productRoute?.children
     ?.filter(child => child.meta?.showInDropdown)
     .map(child => `/products/${child.path}`);
-  const navLinks = routes.filter(route => route.meta?.showInNav);
+
+  const navLinks = routesData.filter(route => route.meta?.showInNav);
 
   return (
     <div className="flex flex-col w-full min-h-screen">
-
       <DesktopNav
         productRoute={productRoute}
         dropLabels={dropLabels}
         dropUrls={dropUrls}
         navLinks={navLinks}
         logo={{ src: logo, alt: "Logo" }}
-        links={navLinks} />
-        
+        links={navLinks}
+      />
+
       <MobileNav
         productRoute={productRoute}
         dropLabels={dropLabels}
@@ -38,6 +59,7 @@ export default function RootLayout() {
         links={navLinks}
         logo={{ src: logo, alt: "Logo" }}
       />
+
       <main className="flex-1 mt-12 mb-12">
         <Outlet />
       </main>
@@ -46,4 +68,3 @@ export default function RootLayout() {
     </div>
   );
 }
-
