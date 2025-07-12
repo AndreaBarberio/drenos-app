@@ -1,5 +1,16 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 export default function Footer() {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date()); // aggiorna ogni secondo
+    }, 1000);
+
+    return () => clearInterval(timer); // pulizia al dismount
+  }, []);
+
   return (
     <footer className="flex flex-col w-full bg-black bg-opacity-70 text-white p-4">
       <div className=" p-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
@@ -24,7 +35,7 @@ export default function Footer() {
       <div className="flex justify-around flex-col md:flex-row mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs mb-12 md:mb-0">
         <span>Drenos®</span>
         <span>Tutti i diritti riservati ad Andrea Barberio.</span>
-        <span>{new Date().toLocaleString()}</span>
+        <span>{time.toLocaleString()}</span>
       </div>
     </footer>
   );

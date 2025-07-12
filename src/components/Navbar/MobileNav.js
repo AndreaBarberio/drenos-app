@@ -65,7 +65,7 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
       <div className="flex justify-around items-center py-2">
         {/* Logo */}
         <Link to="/" className="flex flex-col items-center">
-          <img src={logo.src} alt={logo.alt} className="h-6 w-auto mb-1 rounded-md" />
+          <img src={logo.src} alt={logo.alt} className="h-6 w-auto mb-1 rounded-sm" />
         </Link>
 
         {/* Navigation icons */}
@@ -76,7 +76,7 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
           return (
             <div
               key={i}
-              className="relative flex flex-col items-center text-gray-600 hover:text-blue-600"
+              className="relative flex flex-col items-center text-slate-800 hover:text-blue-600 focus:text-blue-600"
             >
               {isProducts ? (
                 <button
