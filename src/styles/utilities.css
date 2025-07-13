@@ -122,7 +122,7 @@
 }
 
 .footer-content {
-  @apply p-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm;
+  @apply p-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm;
 }
 
 .footer-title {
