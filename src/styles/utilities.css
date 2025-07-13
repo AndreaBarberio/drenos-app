@@ -5,7 +5,7 @@
 @layer components {
   /* 🌐 LAYOUT */
   .d-container {
-    @apply flex flex-col w-full h-full m-0;
+    @apply flex flex-col w-full h-full ;
   }
 
   .section-base {
@@ -17,7 +17,7 @@
   }
 
   .section-show {
-    @apply section-base text-gray-800;
+    @apply section-base text-gray-800 ;
   }
 
   .section-light {
@@ -30,19 +30,22 @@
   }
 
   .grid-services {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+    @apply grid grid-dispatcher grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
   }
 
   /* 📝 TYPOGRAPHY */
+  .heading-s {
+    @apply text-2xl md:text-3xl font-bold text-gray-800 text-center; 
+  }
   .heading-xl {
-    @apply text-2xl md:text-4xl text-gray-300 font-bold mb-4 text-shadow-xl;
+    @apply heading-s md:text-4xl text-gray-300 mb-4 text-shadow-xl;
   }
 
   .heading-lg {
-    @apply text-2xl md:text-3xl font-bold text-center md:text-left mb-12;
+    @apply heading-s font-bold  md:text-left mb-12;
   }
   .heading-xxl {
-    @apply text-2xl md:text-3xl font-bold text-center md:text-center mb-12;
+    @apply heading-s mb-12;
   }
 
   .paragraph-xl {
