@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* 🌐 LAYOUT */
+  .container {
+    @apply m-0 ;
+  }
+
+  .section-base {
+    @apply w-full self-center rounded-xl;
+  }
+
+  .section-column {
+    @apply section-base p-6 flex flex-col text-center md:text-left  from-slate-400 to-transparent;
+  }
+
+  .section-light {
+    @apply section-base text-gray-800;
+  }
+
+  .section-muted {
+    @apply section-base mt-12;
+  }
+
+  /* 👥 GRID */
+  .grid-3-cols {
+    @apply w-full grid grid-cols-1 md:grid-cols-3 gap-6;
+  }
+
+  .grid-services {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+
+  /* 📝 TYPOGRAPHY */
+  .heading-xl {
+    @apply text-2xl md:text-4xl text-gray-300 font-bold mb-4 text-shadow-xl;
+  }
+
+  .heading-lg {
+    @apply text-2xl md:text-3xl font-bold text-center md:text-left mb-12;
+  }
+  .heading-xxl {
+    @apply text-2xl md:text-3xl font-bold text-center md:text-center mb-12;
+  }
+
+  .paragraph-xl {
+    @apply text-sm md:text-xl xl:text-left text-gray-700 mb-6;
+  }
+
+  /* 🎨 BUTTONS */
+  .btn {
+    @apply bg-primary text-white rounded transition;
+  }
+
+  .btn-primary {
+    @apply btn px-4 py-2 hover:bg-gray-800;
+  }
+
+  .btn-large {
+    @apply btn p-4 w-fit self-center md:self-end hover:bg-gray-800;
+  }
+
+  /* 📦 CARD BASE */
+  .card {
+    @apply bg-slate-300 rounded-2xl shadow-md p-6 text-center hover:shadow-lg transition;
+  }
+
+  .card-service {
+    @apply card flex flex-col items-center;
+  }
+
+  .card-testimonial {
+    @apply card bg-gradient-to-b from-slate-400 to-gray-200 hover:shadow-xl;
+  }
+
+  .card-icon {
+    @apply text-5xl mb-4;
+  }
+
+  .card-title {
+    @apply text-xl font-semibold mb-2;
+  }
+
+  .card-description {
+    @apply text-gray-600;
+  }
+
+  /* 👤 TESTIMONIAL */
+  .testimonial-header {
+    @apply flex flex-col md:flex-row items-center gap-4 mb-4;
+  }
+
+  .testimonial-avatar {
+    @apply w-12 h-12 rounded-full;
+  }
+
+  .testimonial-name {
+    @apply text-lg text-center md:text-left font-semibold;
+  }
+
+  .testimonial-text {
+    @apply text-gray-700 italic text-center md:text-left;
+  }
+
+  /* 🛍️ FEATURED PRODUCT */
+  .featured-container {
+    @apply flex flex-col md:flex-row w-full self-center rounded-2xl overflow-hidden min-h-screen gap-4;
+  }
+  
+  .featured-image {
+    @apply w-full md:w-1/2 object-cover rounded-lg h-64;
+  }
+  
+  .featured-content {
+    @apply w-full p-6 flex flex-col justify-between text-center md:text-left;
+  }
+  /* 📦 FOOTER */
+.footer {
+  @apply w-full bg-black bg-opacity-70 text-white;
+}
+
+.footer-content {
+  @apply p-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm;
+}
+
+.footer-title {
+  @apply text-lg font-semibold mb-2;
+}
+
+.footer-bottom {
+  @apply flex justify-around flex-col md:flex-row mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs  mb-16 md:mb-4;
+}
+
+}
