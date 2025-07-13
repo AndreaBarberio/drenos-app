@@ -9,29 +9,29 @@ function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropU
   const mainLinks = links.filter(link => !["/cart", "/profile"].includes(link.path));
 
   return (
-    <nav className="flex gap-8 h-12 w-full bg-transparent text-gray-200 text-lg font-semibold fixed top-0 left-0 md:border-b border-gray-600 z-50 backdrop-blur-md px-4 items-center">
+    <nav className="desktop-nav">
       {/* Logo */}
-      <Link to="/" className="h-8 w-8 hidden md:flex rounded-md shadow-black shadow-md">
-        <img src={src} alt={alt} className="h-full w-full object-contain" />
+      <Link to="/" className="desktop-nav__logo">
+        <img src={src} alt={alt} className="desktop-nav__logo-img" />
       </Link>
 
       {/* Main nav links */}
-      <ul className="flex flex-1 justify-start gap-12 ml-6">
+      <ul className="desktop-nav__list">
         {mainLinks.map((link, i) => {
           const isProducts = link.path === '/products';
           return (
             <li
               key={i}
-              className="hidden md:flex md:relative text-shadow-lg"
+              className="desktop-nav__item"
               onMouseEnter={() => isProducts && setIsDropdownOpen(true)}
               onMouseLeave={() => isProducts && setIsDropdownOpen(false)}
             >
-              <Link to={link.path} className="hover:text-blue-300 transition-colors">
+              <Link to={link.path} className="desktop-nav__link">
                 {link.meta?.label}
               </Link>
 
               {isProducts && isDropdownOpen && (
-                <div className="absolute left-0 top-full z-10">
+                <div className="desktop-nav__dropdown">
                   <Dropdown labels={dropLabels} urls={dropUrls} productRoute={productRoute} />
                 </div>
               )}
@@ -41,15 +41,16 @@ function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropU
       </ul>
 
       {/* Extra icons */}
-      <div className="flex gap-4 items-center">
-        <Link to="/cart" className="hover:text-blue-300 transition-colors">
+      <div className="desktop-nav__extras">
+        <Link to="/cart" className="desktop-nav__icon-link">
           <ShoppingCart size={20} />
         </Link>
-        <Link to="/profile" className="hover:text-blue-300 transition-colors">
+        <Link to="/profile" className="desktop-nav__icon-link">
           <User size={20} />
         </Link>
       </div>
     </nav>
+
   );
 }
 
