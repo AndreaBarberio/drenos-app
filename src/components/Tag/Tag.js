@@ -2,7 +2,7 @@ function Tag({ tags = [] }) {
   if (tags.length === 0) return null;
 
   return (
-    <div className="flex justify-evenly md:justify-start gap-2 mb-4 flex-wrap">
+    <div className="flex justify-center md:justify-start gap-2 mb-4 flex-wrap">
       {tags.map((tag, i) => (
         <span
           key={i}

@@ -3,26 +3,23 @@ import StarRating from "./StarRating/Stars";
 
 export default function Testimonials() {
   return (
-    <section className="flex flex-col w-full mt-12 rounded-xl">
-      <h2 className="w-full text-2xl font-bold text-center mb-8 text-gray-800">Cosa dicono i nostri clienti</h2>
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section className="section-muted flex flex-col rounded-xl">
+      <h2 className="heading-lg text-gray-800">Cosa dicono i nostri clienti</h2>
+      <div className="grid-3-cols">
         {testimonials.map((t, i) => (
-
-          <div
-            key={i}
-            className="flex flex-col w-full bg-gradient-to-b from-slate-400 to-gray-200 rounded-lg p-6 shadow-md hover:shadow-xl transition"
-          >
-            <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
-              <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full" />
+          <div key={i} className="card-testimonial">
+            <div className="testimonial-header">
+              <img src={t.avatar} alt={t.name} className="testimonial-avatar" />
               <div>
-                <h3 className="text-lg text-center md:text-left font-semibold">{t.name}</h3>
+                <h3 className="testimonial-name">{t.name}</h3>
                 <StarRating rating={t.rating} />
               </div>
             </div>
-            <p className="text-gray-700 italic text-center md:text-left">"{t.text}"</p>
+            <p className="testimonial-text">"{t.text}"</p>
           </div>
         ))}
       </div>
     </section>
+
   );
 }
