@@ -178,42 +178,6 @@
   .mobile-nav-icon {
     @apply text-xl;
   }
-  /* 🧭 DESKTOP NAVBAR */
-.desktop-nav {
-  @apply hidden md:flex h-12 w-full gap-16 fixed top-0 left-0 z-50 items-center px-4 text-base font-semibold text-gray-200 md:bg-transparent md:border-b border-gray-600 md:backdrop-blur-md;
-}
-
-.desktop-nav__logo {
-  @apply h-8 w-8 hidden md:flex rounded-md shadow-black shadow-md;
-}
-
-.desktop-nav__logo-img {
-  @apply h-full w-full object-contain;
-}
-
-.desktop-nav__list {
-  @apply flex flex-1 justify-start gap-16 ml-6;
-}
-
-.desktop-nav__item {
-  @apply hidden md:flex md:relative text-shadow-lg;
-}
-
-.desktop-nav__link {
-  @apply hover:text-blue-300 transition-colors;
-}
-
-.desktop-nav__dropdown {
-  @apply absolute left-0 top-full z-10;
-}
-
-.desktop-nav__extras {
-  @apply flex gap-4 items-center;
-}
-
-.desktop-nav__icon-link {
-  @apply hover:text-blue-300 transition-colors text-slate-800 md:text-gray-200;
-}
-
+  
 }
 
