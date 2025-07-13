@@ -14,9 +14,10 @@ export default function RootLayout() {
   useEffect(() => {
     const fetchRoutes = async () => {
       try {
-        const res = await fetch("/config/routes.json"); // 
+        const res = await fetch("https://6872f78ec75558e2735311f6.mockapi.io/drenos/routes/v1/drenos/"); // 
         const data = await res.json();
         setRoutesData(data);
+        console.log("Fetched routes:", data);
       } catch (error) {
         console.error("Errore nel fetch delle routes:", error);
       } finally {
