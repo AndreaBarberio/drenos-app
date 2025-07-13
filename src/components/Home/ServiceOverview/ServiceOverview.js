@@ -3,7 +3,7 @@ import ServiceCopy from "../../../data/serviceCopy";
 
 function ServicesOverview() {
   return (
-    <section className="section-light">
+    <section className="section-show">
       <div className="container">
         {ServiceCopy.map((service, i) => (
           <h2 key={i} className="heading-xxl">

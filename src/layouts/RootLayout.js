@@ -43,7 +43,7 @@ export default function RootLayout() {
   const navLinks = routesData.filter(route => route.meta?.showInNav);
 
   return (
-    <div className="flex flex-col w-full min-h-screen">
+    <div className="d-container">
       <DesktopNav
         productRoute={productRoute}
         dropLabels={dropLabels}

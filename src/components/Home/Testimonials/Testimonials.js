@@ -3,9 +3,9 @@ import StarRating from "./StarRating/Stars";
 
 export default function Testimonials() {
   return (
-    <section className="section-muted flex flex-col rounded-xl">
+    <section className="section-light flex flex-col rounded-xl">
       <h2 className="heading-lg text-gray-800">Cosa dicono i nostri clienti</h2>
-      <div className="grid-3-cols">
+      <div className="grid-dispatcher">
         {testimonials.map((t, i) => (
           <div key={i} className="card-testimonial">
             <div className="testimonial-header">

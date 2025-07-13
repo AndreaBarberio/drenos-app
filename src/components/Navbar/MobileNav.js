@@ -12,7 +12,6 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
 
-  // Chiude la dropdown al cambio route
   useEffect(() => {
     setDropdownOpen(false);
   }, [location.pathname]);
@@ -37,17 +36,15 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
   };
 
   return (
-
-    <nav className="md:hidden fixed bottom-0 left-0 w-full bg-black bg-opacity-60 backdrop-blur-sm border-t border-gray-700 text-white z-50 shadow-lg">
-
+    <nav className="mobile-nav">
       {dropdownOpen && (
-        <div className="absolute bottom-full left-0 w-full max-h-[50vh] overflow-auto bg-[rgba(20,20,21,0.94)] backdrop-blur-xl shadow-lg border-t border-gray-200 ">
-          <ul className="flex flex-col p-4 space-y-2">
+        <div className="mobile-nav-dropdown">
+          <ul className="mobile-nav-dropdown-list">
             {dropLabels.map((label, idx) => (
               <li key={idx}>
                 <Link
                   to={dropUrls[idx]}
-                  className="block text-gray-700 px-4 py-2 hover:text-blue-600"
+                  className="mobile-nav-dropdown-link"
                 >
                   {label}
                 </Link>
@@ -57,11 +54,10 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
         </div>
       )}
 
-
-      <div className="flex justify-around items-center py-2">
+      <div className="mobile-nav-inner">
         {/* Logo */}
-        <Link to="/" className="flex flex-col items-center">
-          <img src={logo.src} alt={logo.alt} className="h-6 w-auto mb-1 rounded-sm" />
+        <Link to="/" className="mobile-nav-logo">
+          <img src={logo.src} alt={logo.alt} className="mobile-nav-logo-img" />
         </Link>
 
         {/* Navigation icons */}
@@ -72,18 +68,18 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
           return (
             <div
               key={i}
-              className="relative flex flex-col items-center text-slate-800 hover:text-blue-600 focus:text-blue-600"
+              className="mobile-nav-icon-wrapper"
             >
               {isProducts ? (
                 <button
                   onClick={toggleDropdown}
-                  className="flex flex-col items-center focus:outline-none"
+                  className="mobile-nav-icon-button"
                 >
-                  <span className="text-xl">{icon}</span>
+                  <span className="mobile-nav-icon">{icon}</span>
                 </button>
               ) : (
-                <Link to={link.path} className="flex flex-col items-center">
-                  <span className="text-xl">{icon}</span>
+                <Link to={link.path} className="mobile-nav-icon-button">
+                  <span className="mobile-nav-icon">{icon}</span>
                 </Link>
               )}
             </div>
