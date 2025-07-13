@@ -36,14 +36,17 @@
   /* 📝 TYPOGRAPHY */
   .heading-s {
     @apply text-2xl md:text-3xl font-bold text-gray-800 text-center; 
+  }  
+  
+  .heading-lg {
+    @apply heading-s font-bold  md:text-left mb-12;
   }
+  
   .heading-xl {
     @apply heading-s md:text-4xl text-gray-300 mb-4 text-shadow-xl;
   }
 
-  .heading-lg {
-    @apply heading-s font-bold  md:text-left mb-12;
-  }
+
   .heading-xxl {
     @apply heading-s mb-12;
   }
