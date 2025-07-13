@@ -1,32 +1,32 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
-
-const imgStyle = "self-center align-center h-8 w-8 rounded-md shadow-black shadow-md ml-2";
+import { ShoppingCart, User } from "lucide-react";
 
 function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropUrls }) {
-  // state che apre e chiude la dropdown quando in hover
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const mainLinks = links.filter(link => !["/cart", "/profile"].includes(link.path));
 
   return (
-    <nav className=" hidden md:flex h-12 w-full bg-transparent text-gray-100 fixed top-0 left-0 border-b border-gray-600 z-50 backdrop-blur-md" aria-label="Main navigation">
+    <nav className="flex gap-8 h-12 w-full bg-transparent text-gray-200 text-lg font-semibold fixed top-0 left-0 md:border-b border-gray-600 z-50 backdrop-blur-md px-4 items-center">
+      {/* Logo */}
+      <Link to="/" className="h-8 w-8 hidden md:flex rounded-md shadow-black shadow-md">
+        <img src={src} alt={alt} className="h-full w-full object-contain" />
+      </Link>
 
-      <Link className={imgStyle} to="/"> <img src={src} alt={alt} /> </ Link>
-      <ul className="flex flex-1 justify-evenly ml-2 flex-row self-center">
-        {links.map((link, i) => {
-
+      {/* Main nav links */}
+      <ul className="flex flex-1 justify-start gap-12 ml-6">
+        {mainLinks.map((link, i) => {
           const isProducts = link.path === '/products';
-          //estraiamo un booleano per renderizzare sotto prodotti la dropdown evitando che si propaghi sotto tutti i link della nav
           return (
-
             <li
               key={i}
-              className="relative text-shadow-lg"
+              className="hidden md:flex md:relative text-shadow-lg"
               onMouseEnter={() => isProducts && setIsDropdownOpen(true)}
               onMouseLeave={() => isProducts && setIsDropdownOpen(false)}
             >
-              <Link to={link.path}>
+              <Link to={link.path} className="hover:text-blue-300 transition-colors">
                 {link.meta?.label}
               </Link>
 
@@ -36,11 +36,19 @@ function DesktopNav({ logo: { src, alt }, links, productRoute, dropLabels, dropU
                 </div>
               )}
             </li>
-
           );
         })}
       </ul>
-      <img className={imgStyle + " hidden"} src={src} alt={alt} />
+
+      {/* Extra icons */}
+      <div className="flex gap-4 items-center">
+        <Link to="/cart" className="hover:text-blue-300 transition-colors">
+          <ShoppingCart size={20} />
+        </Link>
+        <Link to="/profile" className="hover:text-blue-300 transition-colors">
+          <User size={20} />
+        </Link>
+      </div>
     </nav>
   );
 }

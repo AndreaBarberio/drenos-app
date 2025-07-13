@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import {
   Home,
   Info,
-  Package,
-  ShoppingCart,
-  User
+  Package
 } from "lucide-react";
 
 function MobileNav({ logo, links, dropLabels, dropUrls }) {
@@ -26,14 +24,13 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
         return <Info size={20} />;
       case '/products':
         return <Package size={20} />;
-      case '/cart':
-        return <ShoppingCart size={20} />;
-      case '/profile':
-        return <User size={20} />;
       default:
         return <Package size={20} />;
     }
   };
+
+  // ✅ Filtra via cart e profile
+  const visibleLinks = links.filter(link => !["/cart", "/profile"].includes(link.path));
 
   return (
     <nav className="mobile-nav">
@@ -61,7 +58,7 @@ function MobileNav({ logo, links, dropLabels, dropUrls }) {
         </Link>
 
         {/* Navigation icons */}
-        {links.map((link, i) => {
+        {visibleLinks.map((link, i) => {
           const isProducts = link.path === "/products";
           const icon = getIconForPath(link.path);
 
