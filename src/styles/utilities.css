@@ -106,7 +106,7 @@
 
   /* 🛍️ FEATURED PRODUCT */
   .featured-container {
-    @apply flex flex-col md:flex-row w-full self-center rounded-2xl overflow-hidden min-h-screen gap-4;
+    @apply flex flex-col md:flex-row w-full self-center rounded-2xl overflow-hidden gap-4;
   }
   
   .featured-image {
