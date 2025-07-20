@@ -14,10 +14,9 @@ export default function RootLayout() {
   useEffect(() => {
     const fetchRoutes = async () => {
       try {
-        const res = await fetch("http://localhost:3001/routes"); // 
+        const res = await fetch("http://localhost:3001/routes");
         const data = await res.json();
         setRoutesData(data);
-        console.log("Fetched routes:", data);
       } catch (error) {
         console.error("Errore nel fetch delle routes:", error);
       } finally {
@@ -27,6 +26,8 @@ export default function RootLayout() {
 
     fetchRoutes();
   }, []);
+
+
 
   if (loading || !routesData) return <ChargeSpinner />
 
