@@ -4,28 +4,35 @@ import logo from "../assets/drenos/logo.png";
 import Footer from '../components/Footer/Footer';
 import MobileNav from '../components/Navbar/MobileNav';
 import ChargeSpinner from '../components/Charging/ChargeSpinner';
+import { setLoading, setError } from '../store/slices/appSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 import { useEffect, useState } from 'react';
 
 export default function RootLayout() {
   const [routesData, setRoutesData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const loading = useSelector(state => state.app.loading);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchRoutes = async () => {
       try {
+        dispatch(setLoading(true)); // 👉 Avvia caricamento globale
         const res = await fetch("http://localhost:3001/routes");
         const data = await res.json();
         setRoutesData(data);
       } catch (error) {
+        dispatch(setError("Errore nel fetch delle routes"));
         console.error("Errore nel fetch delle routes:", error);
       } finally {
-        setLoading(false);
+        dispatch(setLoading(false)); // 👉 Fine caricamento
       }
     };
 
     fetchRoutes();
-  }, []);
+  }, [dispatch]);
+
 
 
 
