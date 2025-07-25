@@ -5,7 +5,7 @@ const FeaturedProducts = ({ products }) => {
   return (
     <section className="section-light items-center">
       <h2 className="heading-s mb-4">Prodotti Consigliati</h2>
-      <div className="flex flex-wrap justify-center gap-6 w-fit h-fit">
+      <div className="flex flex-wrap justify-center gap-6 w-full h-full">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
