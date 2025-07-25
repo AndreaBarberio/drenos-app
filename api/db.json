@@ -16,12 +16,12 @@
       ]
     },
     {
-      "path": "/services",
-      "meta": { "label": "Services", "showInNav": true },
+      "path": "/products",
+      "meta": { "label": "Products", "showInNav": true },
       "children": [
         {
           "index": true,
-          "meta": { "label": "Services", "showInNav": true }
+          "meta": { "label": "Products", "showInNav": true }
         },
         { "path": "smartphone", "meta": { "label": "Smartphone", "showInDropdown": true } },
         { "path": "notebook", "meta": { "label": "Notebook", "showInDropdown": true } },
